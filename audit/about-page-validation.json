@@ -1,0 +1,36 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/management",
+      "status": 200
+    },
+    {
+      "path": "/board",
+      "status": 200
+    },
+    {
+      "path": "/governance",
+      "status": 200
+    },
+    {
+      "path": "/zh/management",
+      "status": 200
+    },
+    {
+      "path": "/zh/board",
+      "status": 200
+    },
+    {
+      "path": "/zh/governance",
+      "status": 200
+    }
+  ],
+  "committee_table_matches_original": true,
+  "original_biographies_preserved": true,
+  "management_portraits": 3,
+  "board_portraits": 5
+}

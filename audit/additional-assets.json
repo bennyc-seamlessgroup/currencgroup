@@ -1,0 +1,110 @@
+[
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/design/banner/home_banner.jpg",
+    "path": "site/public/assets/home_banner.jpg",
+    "sha256": "b6de54b478b62cae60ba07d27b496a3101ba61524c7ac22d502f420d8d90cb87",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/design/banner/banner-inner.jpg",
+    "path": "site/public/assets/banner-inner.jpg",
+    "sha256": "b36c95217441a12639a886b41700fabcbdf703ef45ae13827c5b8f6d1af923c3",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/design/banner/investor_resources_banner.jpg",
+    "path": "site/public/assets/investor_resources_banner.jpg",
+    "sha256": "24eafeb0089266ea065d87c955b42b99073fe6fb0c776f9d9a069e545d29a061",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/design/banner/financials_banner.jpg",
+    "path": "site/public/assets/financials_banner.jpg",
+    "sha256": "79d89111bddeeb454392466996cedd76759322e66765b9eba9707ee4ef8c932a",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/design/banner/stock_information_banner.jpg",
+    "path": "site/public/assets/stock_information_banner.jpg",
+    "sha256": "374e8b15730abaecf3f7ec6da0b87cd46026974b72421456f62312807f4e9669",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/design/banner/event_presentation_banner.jpg",
+    "path": "site/public/assets/event_presentation_banner.jpg",
+    "sha256": "ab37986d6cc7252270c8eb5b78f400e7afdcc11dd6938c51a4c7c7c8653225b1",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/design/banner/about_us_banner.jpg",
+    "path": "site/public/assets/about_us_banner.jpg",
+    "sha256": "86020d1a43d9362ca1d30085a432bd6bb8cdfe9e3fffd19378720a0ecec2f13b",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/images/bg_01.jpg",
+    "path": "site/public/assets/bg_01.jpg",
+    "sha256": "b373ac4e050efe8da71b74c667f9f6858c9f5ab1d27dc2f7acce6360a90f4228",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/images/board/Alex_board_photo.jpg",
+    "path": "site/public/assets/Alex_board_photo.jpg",
+    "sha256": "4e6982e4d5a62d4ca493b2de2806428a609960ba0d49ff06ccae06e757ab47c3",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/images/board/Eng_board_photo.jpg",
+    "path": "site/public/assets/Eng_board_photo.jpg",
+    "sha256": "482821c7a03756e023d0ba4222306ca3ad36094d9c1ea66d55f496f6be9627f9",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/images/board/Eric_board_photo.jpg",
+    "path": "site/public/assets/Eric_board_photo.jpg",
+    "sha256": "ba0367d1c863b818fe1016af165cb0aa060109c2c2e6bfd5d333192be2947146",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/images/board/Kevin_board_photo.jpg",
+    "path": "site/public/assets/Kevin_board_photo.jpg",
+    "sha256": "553e3605097cf54f38d5653a120b58964d421d61eb6080f798526024bc090bb6",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/images/board/Wan_board_photo.jpg",
+    "path": "site/public/assets/Wan_board_photo.jpg",
+    "sha256": "ab319cdc7d733c857833deb762e383201c38ba4cb3ba055c7be4e05f9f45f4c0",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/doc_governance/2025/Nov/28/Audit-Committee-Charter-4858-0687-1268-3-712620-604eb2.pdf",
+    "path": "site/public/assets/Audit-Committee-Charter-4858-0687-1268-3-712620-604eb2.pdf",
+    "sha256": "9394630e037f0bfbc7b33d91efc4dfc7230a2d3a18d4542e6dd8b8a2eeb525bb",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/doc_governance/2025/Nov/28/Code-of-Business-Conduct-and-Ethics-4888-7972-3492-2-a9138a-c281fa.pdf",
+    "path": "site/public/assets/Code-of-Business-Conduct-and-Ethics-4888-7972-3492-2-a9138a-c281fa.pdf",
+    "sha256": "58df0fda42c2e7c63bf87411fd2fdbd1cf8c14366e5b5aa99726f6e95de27434",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/doc_governance/2025/Nov/28/Compensation-Committee-Charter-4858-6034-8644-3-617c32-a49737.pdf",
+    "path": "site/public/assets/Compensation-Committee-Charter-4858-6034-8644-3-617c32-a49737.pdf",
+    "sha256": "e26ca99aed8fc05459a845c18b16177680d5106e93f3fa2a06aa1b2c8ba868a8",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/doc_governance/2025/Nov/28/Corporate-Governance-Guidelines-4867-9495-7796-3-6ba020-2994e4.pdf",
+    "path": "site/public/assets/Corporate-Governance-Guidelines-4867-9495-7796-3-6ba020-2994e4.pdf",
+    "sha256": "3076f9a114159350bf75156e35d4875bff6417c0ddd90e9cfdd29f73ea5be33a",
+    "status": "downloaded"
+  },
+  {
+    "url": "https://s202.q4cdn.com/618684105/files/doc_governance/2025/Nov/28/Nominating-and-Corporate-Governance-Committee-Charter-4883-8053-5524-3-264b66-7ad1b7.pdf",
+    "path": "site/public/assets/Nominating-and-Corporate-Governance-Committee-Charter-4883-8053-5524-3-264b66-7ad1b7.pdf",
+    "sha256": "a568e7590e8601156a5423914c7d0f7f373c894bf08bffc125c00d67c6630d8a",
+    "status": "downloaded"
+  }
+]

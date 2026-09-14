@@ -1,0 +1,189 @@
+/* Homepage design. Scoped to preserve the inner-page layouts. */
+.home-site {
+  --home-navy: #192d37;
+  --home-blue: #b0d7e6;
+  --home-line: #cedce2;
+}
+.home-page .wrap { max-width: 1280px; padding-inline: 48px; }
+.home-page .section { padding-block: 100px; }
+.home-page h2 { font-size: clamp(2rem, 3.1vw, 2.9rem); font-weight: 500; line-height: 1.13; letter-spacing: -.045em; }
+.home-page .eyebrow { font-size: .875rem; letter-spacing: .13em; margin-bottom: 24px; }
+.home-site .header { border-bottom: 1px solid #252525; }
+.home-site .header-inner { max-width: 1440px; padding-inline: 48px; }
+.home-page .hero { background: var(--home-navy); min-height: 0; color: white; }
+.home-page .hero-inner {
+  max-width: 1440px; min-height: 530px; padding: 0 0 0 80px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: stretch;
+}
+.home-page .hero-copy { max-width: none; padding-block: 76px 66px; align-self: center; }
+.home-page .hero-copy h1 {
+  font-size: clamp(3.8rem, 6.6vw, 6.4rem); font-weight: 400; line-height: .99;
+  letter-spacing: -.055em; color: var(--home-blue); margin: 0 0 34px;
+}
+.home-page .hero-copy p { max-width: 395px; font-size: 1.125rem; line-height: 1.7; color: #d6e3e9; }
+.home-hero-media { min-width: 0; position: relative; overflow: hidden; border-bottom-left-radius: 110px; }
+.home-hero-media img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: 52% center; }
+.home-market { background: #b9d9e6; color: #193742; }
+.home-page .home-market .quote {
+  color: #193742; background: transparent; border-radius: 0; padding: 20px 0; margin: 0;
+  min-width: 0; max-width: none; gap: 42px; backdrop-filter: none; min-height: 90px;
+}
+.home-market .quote > div { display: flex; gap: 24px; align-items: center; }
+.home-market .quote > div + div { border-left: 1px solid #8eb3c3; padding-left: 42px; }
+.home-market .quote strong { font-size: 2rem; font-weight: 400; }
+.home-market .quote small { font-size: .875rem; color: #385b6b; max-width: none; }
+.home-market .quote > a { width: 42px; height: 42px; border: 1px solid #789da9; border-radius: 50%; display: grid; place-items: center; }
+.home-market .quote > a:hover { background: #193742; color: white; }
+.home-page .overview { display: grid; grid-template-columns: .7fr 1.3fr; gap: 80px; text-align: left; }
+.home-overview-heading h2 { max-width: 270px; }
+.home-page .overview p { font-size: 1.0625rem; color: #51636c; line-height: 1.85; margin-bottom: 24px; }
+.home-page .overview p:first-child { font-size: 1.25rem; color: #243b46; line-height: 1.7; }
+.home-page .overview p:last-child { margin-bottom: 0; }
+.home-page .processing { background: linear-gradient(90deg, rgba(10,28,40,.83), rgba(10,28,40,.70)), url('/assets/stock-data-center.jpg') center 45% / cover no-repeat, #1c2e37; color: #eaf4f8; text-align: left; padding: 68px 0 54px; }
+.home-page .processing h2 { padding-bottom: 28px; border-bottom: 1px solid #455761; margin-bottom: 20px; }
+.home-page .processing img { display: block; width: 100%; max-width: 1080px; height: auto; margin: 0 auto; }
+.home-page .companies { background: #f2f6f8; }
+.home-page .companies h2 { text-align: left; margin-bottom: 48px; }
+.home-page .company-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.home-page .company { position: relative; background: white; border: 1px solid #e0e8ec; padding: 36px 38px 32px; border-radius: 16px; }
+.home-page .company-logo { height: 78px; margin-bottom: 24px; }
+.home-page .company-logo img { width: auto; max-width: 205px; max-height: 70px; }
+.home-page .company h3 { font-size: 1.5rem; font-weight: 500; margin-bottom: 16px; }
+.home-page .company p { font-size: 1rem; color: #596b75; line-height: 1.75; margin-bottom: 26px; }
+.home-page .company a { font-size: .875rem; align-self: flex-start; padding-top: 0; gap: 14px; border-bottom: 1px solid #aac4d0; padding-bottom: 5px; }
+.home-page .feature { margin-block: 88px; background: #c4dfea; border-radius: 24px; padding: 54px 60px; width: calc(100% - 96px); max-width: 1184px; gap: 44px; align-items: flex-end; position: relative; }
+.home-page .feature .eyebrow { color: #315665; margin-bottom: 25px; }
+.home-page .feature h2 { font-size: clamp(2rem, 3.1vw, 2.8rem); }
+.home-page .feature p { max-width: 620px; color: #365664; line-height: 1.8; font-size: 1rem; }
+.home-page .button { border-radius: 50px; padding: 17px 25px; gap: 20px; }
+.home-page .feature .button { flex-shrink: 0; margin-bottom: 4px; background: #213f4b; }
+.home-page .feature .button:hover { background: #356779; }
+.home-page .news-section { background: #fff; padding-top: 8px; padding-bottom: 88px; }
+.home-page .news-section .section-heading { margin-bottom: 40px; }
+.home-page .section-heading > a { font-size: .875rem; gap: 14px; }
+.home-page .news-grid { display: block; border-top: 1px solid #829ca9; }
+.home-page .news-card {
+  border: 0; border-bottom: 1px solid var(--home-line); padding: 30px 0;
+  display: grid; grid-template-columns: 160px minmax(0,1fr) 112px; align-items: start; gap: 34px;
+}
+.home-page .news-card time { font-size: .875rem; padding-top: 5px; color: #58717e; }
+.home-page .news-card h3 { font-size: 1.375rem; line-height: 1.5; font-weight: 500; letter-spacing: -.025em; margin: 0; }
+.home-page .news-card .read-more { margin: 5px 0 0; font-size: .875rem; gap: 10px; justify-content: flex-end; }
+.home-page .presentations-events { padding-top: 0; padding-bottom: 100px; gap: 64px; grid-template-columns: 1fr 1fr; align-items: start; }
+.home-page .presentations-events h2 { font-size: 1.875rem; }
+.home-page .presentations-events > div { min-width: 0; }
+.home-page .deck-cover {
+  border-radius: 18px; padding: 36px; min-height: 300px; background: #223f4c;
+  border-top: 6px solid #9fcadc; overflow: hidden;
+}
+.home-page .deck-cover:hover { background: #2d5262; }
+.home-page .deck-cover img { width: 160px; margin-bottom: 32px; }
+.home-page .deck-cover > span { font-weight: 400; font-size: 2.5rem; }
+.home-page .deck-cover small { font-size: .875rem; color: #c5dce7; }
+.home-page .deck-cover > svg { border: 1px solid #7293a3; border-radius: 50%; padding: 12px; width: 48px; height: 48px; bottom: 30px; right: 30px; }
+.home-page .event { padding-bottom: 28px; margin-bottom: 28px; border-color: var(--home-line); }
+.home-page .event time { font-size: .875rem; }
+.home-page .event h3 { font-size: 1.25rem; font-weight: 500; line-height: 1.5; }
+.home-page .event a,.home-page .text-link { font-size: .875rem; }
+.home-site footer { background: #192d37; }
+.home-site .footer-top { max-width: 1280px; padding-inline: 48px; padding-block: 64px; }
+.home-site .footer-top h3 { font-weight: 500; font-size: 1.25rem; }
+.home-site .alert-options label { font-size: .875rem; align-items: flex-start; }
+.home-site .alert-options [data-slot='checkbox'] { margin-top: 4px; }
+.home-site .footer-bottom { max-width: 1184px; padding-inline: 0; }
+@media (min-width: 1440px) { .home-page .hero-inner { padding-left: 128px; } }
+@media (max-width: 1100px) {
+  .home-page .hero-inner { padding-left: 48px; gap: 32px; min-height: 480px; }
+  .home-page .hero-copy { padding-block: 60px; }
+  .home-page .hero-copy h1 { font-size: 4.6rem; }
+  .home-page .hero-copy p { font-size: 1rem; }
+  .home-market .quote > div { gap: 18px; }
+  .home-market .quote > div + div { padding-left: 26px; }
+  .home-page .home-market .quote { gap: 26px; }
+  .home-page .overview { gap: 42px; }
+  .home-page .feature { padding: 42px; align-items: flex-start; flex-direction: column; gap: 28px; }
+  .home-page .news-card { grid-template-columns: 135px minmax(0,1fr) 105px; gap: 24px; }
+  .home-page .presentations-events { gap: 36px; }
+  .home-site .footer-bottom { margin-inline: 48px; }
+}
+@media (max-width: 750px) {
+  .home-page .wrap { padding-inline: 24px; }
+  .home-site .header-inner { padding-inline: 24px; }
+  .home-page .section { padding-block: 64px; }
+  .home-page .hero-inner { grid-template-columns: 1fr; padding: 0; gap: 0; min-height: 0; }
+  .home-page .hero-copy { padding: 48px 24px 44px; }
+  .home-page .hero-copy h1 { font-size: clamp(3.3rem, 12.5vw, 5.5rem); margin-bottom: 26px; }
+  .home-page .hero-copy p { max-width: 460px; font-size: 1.0625rem; }
+  .home-hero-media { height: 260px; border-bottom-left-radius: 0; border-top-left-radius: 72px; margin-left: 24px; }
+  .home-page .home-market .quote { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 8px 20px; padding-block: 18px; }
+  .home-market .quote > div { gap: 18px; }
+  .home-market .quote > div + div { grid-row: 2; padding: 0; border: 0; display: block; }
+  .home-market .quote > div + div > span { display: block; font-size: .875rem; }
+  .home-market .quote > a { grid-column: 2; grid-row: 1 / 3; }
+  .home-market .quote small { font-size: .875rem; }
+  .home-page .overview { grid-template-columns: 1fr; gap: 12px; }
+  .home-overview-heading h2 { max-width: none; }
+  .home-page .overview p:first-child { font-size: 1.125rem; }
+  .home-page .overview p { font-size: 1rem; }
+  .home-page .processing { padding: 40px 0 32px; }
+  .home-page .processing h2 { margin-bottom: 12px; padding-bottom: 22px; }
+  .home-page .company-grid { grid-template-columns: 1fr; gap: 16px; }
+  .home-page .company { padding: 28px; }
+  .home-page .company-logo { height: 65px; margin-bottom: 20px; }
+  .home-page .company-logo img { max-height: 60px; max-width: 190px; }
+  .home-page .companies h2 { margin-bottom: 30px; }
+  .home-page .feature { width: calc(100% - 48px); margin-block: 56px; padding: 32px 26px; border-radius: 18px; display: flex; }
+  .home-page .feature .button { margin: 0; white-space: normal; font-size: .875rem; }
+  .home-page .news-section { padding-top: 0; }
+  .home-page .section-heading { align-items: flex-start; gap: 20px; }
+  .home-page .section-heading > a { flex-shrink: 0; padding-top: 7px; }
+  .home-page .news-card { grid-template-columns: 1fr; gap: 13px; padding-block: 25px; }
+  .home-page .news-card h3 { font-size: 1.25rem; }
+  .home-page .news-card .read-more { justify-content: flex-start; margin: 3px 0 0; }
+  .home-page .presentations-events { grid-template-columns: 1fr; padding-top: 0; gap: 56px; }
+  .home-page .presentations-events h2 { font-size: 1.7rem; }
+  .home-page .deck-cover { padding: 28px; }
+  .home-site .footer-top { padding: 48px 24px; }
+  .home-site .footer-bottom { margin-inline: 24px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .home-page .company { transition: border-color .2s, box-shadow .2s; }
+  .home-page .company:hover { border-color: #9abaca; box-shadow: 0 8px 28px #1937420a; }
+}
+
+/* Free stock imagery: see STOCK-IMAGE-CREDITS.md for source and licence records. */
+.home-page .feature {
+  isolation: isolate;
+  overflow: hidden;
+}
+.home-page .feature::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 48%;
+  z-index: -2;
+  background: url('/assets/stock-tokenization-glass.jpg') center / cover no-repeat;
+}
+.home-page .feature::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #c4dfea 0%, #c4dfea 49%, rgba(196,223,234,.97) 57%, rgba(196,223,234,.78) 65%, rgba(196,223,234,0) 79%);
+}
+.home-page .feature > div { max-width: 59%; }
+.home-page .feature .button { background: #e4f3fa; color: #193742; box-shadow: 0 4px 22px #05162330; }
+.home-page .feature .button:hover { background: white; color: #244f64; }
+@media (max-width: 1100px) and (min-width: 751px) {
+  .home-page .feature > div { max-width: 63%; }
+  .home-page .feature::before { left: 50%; }
+  .home-page .feature::after { background: linear-gradient(90deg, #c4dfea 0%, #c4dfea 48%, rgba(196,223,234,.95) 60%, rgba(196,223,234,0) 85%); }
+}
+@media (max-width: 750px) {
+  .home-page .feature { padding-top: 190px; }
+  .home-page .feature > div { max-width: none; }
+  .home-page .feature::before { inset: 0 0 auto; height: 215px; background-position: center 42%; }
+  .home-page .feature::after { background: linear-gradient(180deg, rgba(196,223,234,0) 0px, rgba(196,223,234,.08) 95px, #c4dfea 205px); }
+  .home-page .feature .button { background: #213f4b; color: white; }
+  .home-page .feature .button:hover { background: #356779; }
+  .home-page .processing { background-position: center, 40% center; }
+}

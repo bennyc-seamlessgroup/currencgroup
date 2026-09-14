@@ -1,0 +1,23 @@
+{
+  "source": "https://investors.currencgroup.com/English/about-us/corporate-governance/default.aspx",
+  "captured": "2026-09-14",
+  "committees": [
+    "Audit Committee",
+    "Compensation Committee",
+    "Nominating and Corporate Governance Committee"
+  ],
+  "members": [
+    {
+      "name": "Eng Ho Ng",
+      "roles": ["Chair", "Chair", "Chair"]
+    },
+    {
+      "name": "Eric Weinstein",
+      "roles": ["Member", "Member", "Member"]
+    },
+    {
+      "name": "Kevin Chen",
+      "roles": ["Member", null, null]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+[
+  {
+    "path": "/contacts",
+    "status": 200
+  },
+  {
+    "path": "/faqs",
+    "status": 200
+  },
+  {
+    "path": "/sec-filings",
+    "status": 200
+  },
+  {
+    "path": "/",
+    "status": 200
+  },
+  {
+    "path": "/governance",
+    "status": 200
+  },
+  {
+    "path": "/email-alerts",
+    "status": 200
+  },
+  {
+    "path": "/featured-news",
+    "status": 200
+  },
+  {
+    "path": "/meeting-notice",
+    "status": 200
+  },
+  {
+    "path": "/news",
+    "status": 200
+  },
+  {
+    "path": "/information-request",
+    "status": 200
+  },
+  {
+    "path": "/management",
+    "status": 200
+  },
+  {
+    "path": "/board",
+    "status": 200
+  },
+  {
+    "path": "/search",
+    "status": 200
+  },
+  {
+    "path": "/stock",
+    "status": 200
+  },
+  {
+    "path": "/events",
+    "status": 200
+  },
+  {
+    "path": "/site-map",
+    "status": 200
+  },
+  {
+    "path": "/chinese",
+    "status": 200
+  },
+  {
+    "path": "/zh/contacts",
+    "status": 200
+  },
+  {
+    "path": "/zh/faqs",
+    "status": 200
+  },
+  {
+    "path": "/zh/sec-filings",
+    "status": 200
+  },
+  {
+    "path": "/zh/governance",
+    "status": 200
+  },
+  {
+    "path": "/zh/email-alerts",
+    "status": 200
+  },
+  {
+    "path": "/zh/featured-news",
+    "status": 200
+  },
+  {
+    "path": "/zh/news",
+    "status": 200
+  },
+  {
+    "path": "/zh/information-request",
+    "status": 200
+  },
+  {
+    "path": "/zh/management",
+    "status": 200
+  },
+  {
+    "path": "/zh/board",
+    "status": 200
+  },
+  {
+    "path": "/zh/search",
+    "status": 200
+  },
+  {
+    "path": "/zh/stock",
+    "status": 200
+  },
+  {
+    "path": "/zh/events",
+    "status": 200
+  },
+  {
+    "path": "/zh/site-map",
+    "status": 200
+  }
+]

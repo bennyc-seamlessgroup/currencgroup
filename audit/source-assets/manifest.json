@@ -1,0 +1,157 @@
+{
+  "assets": [
+    {
+      "contentType": "text/css",
+      "id": "f9f0ae6b2475dab3",
+      "kind": "stylesheet",
+      "name": "css2",
+      "path": "audit/source-assets/f9f0ae6b2475dab3",
+      "url": "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap",
+      "sha256": "2fe732f7ec5f02af66d630c3fae8b97bbff0e90de41bc54f21537b3650e17ec1"
+    },
+    {
+      "contentType": "text/css",
+      "id": "5fef9b7aeeff0670",
+      "kind": "stylesheet",
+      "name": "print.css",
+      "path": "audit/source-assets/5fef9b7aeeff0670.css",
+      "url": "https://s202.q4cdn.com/618684105/files/css/print.css",
+      "sha256": "1104af4ec5fd522b923898ae46be7a55bc7d62350d291b231400efb27e4de913"
+    },
+    {
+      "contentType": "text/css",
+      "id": "16518cc9bfa9570b",
+      "kind": "stylesheet",
+      "name": "responsive.dataTables.min.css",
+      "path": "audit/source-assets/16518cc9bfa9570b.css",
+      "url": "https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css",
+      "sha256": "63f01d056d6786fccfa30b93d65bc5e0f918e9047e9ea63305c6e6903086df46"
+    },
+    {
+      "contentType": "text/css",
+      "id": "30fab58466eeee32",
+      "kind": "stylesheet",
+      "name": "style-cf.css",
+      "path": "audit/source-assets/30fab58466eeee32.css",
+      "url": "https://s202.q4cdn.com/618684105/files/fonts/style-cf.css",
+      "sha256": "d3ebd4245cf806e6aae5b19e99bf6d6d250a16d31ee11bd7ea473411e620febb"
+    },
+    {
+      "contentType": "text/css",
+      "id": "e68a8041850acf03",
+      "kind": "stylesheet",
+      "name": "global.css",
+      "path": "audit/source-assets/e68a8041850acf03.css",
+      "url": "https://s202.q4cdn.com/618684105/files/css/global.css?v=40857",
+      "sha256": "bb4c29f25262a385dc9c22f20073bb23cfed345cb608c6a381460ca9f00c6901"
+    },
+    {
+      "contentType": "text/css",
+      "id": "75736e879164f22c",
+      "kind": "stylesheet",
+      "name": "client.css",
+      "path": "audit/source-assets/75736e879164f22c.css",
+      "url": "https://s202.q4cdn.com/618684105/files/css/client.css?v=39951",
+      "sha256": "d9adba481fbf6149dfadb45892d31b0371f549867f2032d4d38eac2a2c15c0dc"
+    },
+    {
+      "contentType": "",
+      "id": "a77ac790eddfce2d",
+      "kind": "stylesheet",
+      "name": "GlobalBranding.ashx",
+      "path": "audit/source-assets/a77ac790eddfce2d.ashx",
+      "url": "https://investors.currencgroup.com/GlobalBranding.ashx",
+      "sha256": "d0f03652193ce2d7dda94f79b949d2d5cf73f34b37e09070c1ac9b6dd5271918"
+    },
+    {
+      "contentType": "",
+      "id": "64e8a1dd234a3949",
+      "kind": "stylesheet",
+      "name": "evergreen.1.0.0.min.css",
+      "path": "audit/source-assets/64e8a1dd234a3949.css",
+      "url": "https://investors.currencgroup.com/css/evergreen/dist/default/evergreen.1.0.0.min.css",
+      "sha256": "1ac529e8a50ef00344b241641b3615622df2828d2fb8e533615f248233d41393"
+    },
+    {
+      "contentType": "text/css",
+      "id": "04715c3658ac47bf",
+      "kind": "stylesheet",
+      "name": "css2",
+      "path": "audit/source-assets/04715c3658ac47bf",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+      "sha256": "d57dfa9957a8da048e831165819f7202eb390ff66f61fd6c8354c4a3974e3d5f"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "fec4f8b6204617e2",
+      "kind": "image",
+      "name": "logo.svg",
+      "path": "audit/source-assets/fec4f8b6204617e2.svg",
+      "url": "https://s202.q4cdn.com/618684105/files/design/logo.svg",
+      "sha256": "76ebb5f1dc034fe546a28475cc2ba71b7fb5698cbb927c6256d80fd94218a965"
+    },
+    {
+      "contentType": "image/png",
+      "id": "05b7649c4b90fd69",
+      "kind": "image",
+      "name": "CURRENC-TPV-Chart.png",
+      "path": "audit/source-assets/05b7649c4b90fd69.png",
+      "url": "https://s202.q4cdn.com/618684105/files/images/CURRENC-TPV-Chart.png",
+      "sha256": "c57052aec18faa8976609cb5c3c57a197114ead50e1bbdce84e8dcef52dd4556"
+    },
+    {
+      "contentType": "image/png",
+      "id": "144a56e2d2ab5c09",
+      "kind": "image",
+      "name": "Logo_SeamlessAI_big.png",
+      "path": "audit/source-assets/144a56e2d2ab5c09.png",
+      "url": "https://s202.q4cdn.com/618684105/files/images/Logo_SeamlessAI_big.png",
+      "sha256": "e743ff797be2fe18d318a9cd44942a700c1bdc7c0cf99496939f747c9d0b60f2"
+    },
+    {
+      "contentType": "image/png",
+      "id": "c177adef69c09051",
+      "kind": "image",
+      "name": "currencCapital_logo.png",
+      "path": "audit/source-assets/c177adef69c09051.png",
+      "url": "https://s202.q4cdn.com/618684105/files/images/currencCapital_logo.png",
+      "sha256": "3c6075024f47a5a1d1f58aea66168f26473ba40b03a75d85c5b44a28ab98f4f2"
+    },
+    {
+      "contentType": "image/png",
+      "id": "c0569185562513a1",
+      "kind": "image",
+      "name": "currencPower_logo.png",
+      "path": "audit/source-assets/c0569185562513a1.png",
+      "url": "https://s202.q4cdn.com/618684105/files/images/currencPower_logo.png",
+      "sha256": "1ae4eba7164e28205586292567a9f282d1ba6c0c1f8a932418609470e51a2ba5"
+    },
+    {
+      "contentType": "image/png",
+      "id": "f8aa121e46f163fc",
+      "kind": "image",
+      "name": "all_logos_tranglo_logo4.png",
+      "path": "audit/source-assets/f8aa121e46f163fc.png",
+      "url": "https://s202.q4cdn.com/618684105/files/images/all_logos_tranglo_logo4.png",
+      "sha256": "5197ce895ff857f24d9d3a62350465553ea69f711a33598eb34bbed4810d0ff6"
+    },
+    {
+      "contentType": "image/png",
+      "id": "5f8a602852ec5705",
+      "kind": "image",
+      "name": "linkedin_logo.png",
+      "path": "audit/source-assets/5f8a602852ec5705.png",
+      "url": "https://s202.q4cdn.com/618684105/files/design/linkedin_logo.png",
+      "sha256": "e19482101a384f7fba6539527831180181ff5b1c0905b490adaa74de5a51a80d"
+    },
+    {
+      "name": "CURRENC-Corp-Deck_Nov-10.pdf",
+      "path": "audit/source-assets/CURRENC-Corp-Deck_Nov-10.pdf",
+      "kind": "document",
+      "contentType": "application/pdf",
+      "url": "https://s202.q4cdn.com/618684105/files/doc_presentations/2025/Nov/11/CURRENC-Corp-Deck_Nov-10.pdf",
+      "sha256": "b51232df1e3fffc273d6ec9d77ab51017c1ce6de51bd7ed02cef04478bbd59e7"
+    }
+  ],
+  "failures": []
+}
