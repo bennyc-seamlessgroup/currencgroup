@@ -1,4 +1,5 @@
 'use client';
+import { sitePath } from '@/lib/site-path';
 import { useState, useEffect } from 'react';
 import {
   ArrowRight,
@@ -113,7 +114,7 @@ function NewsList({ items }: { items: News[] }) {
           <article key={n.url + n.date}>
             <time dateTime={n.date}>{fmt(n.date)}</time>
             <a
-              href={n.url}
+              href={sitePath(n.url)}
               target={n.url.startsWith('http') ? '_blank' : undefined}
               rel="noreferrer"
             >
@@ -151,7 +152,7 @@ function Profiles({
         return (
           <article className="leader-card" key={p.name}>
             <div className="leader-portrait">
-              <img src={'/assets/' + portrait} alt={p.name} loading="lazy" />
+              <img src={sitePath('/assets/' + portrait)} alt={p.name} loading="lazy" />
             </div>
             <div className="leader-copy">
               <h2>{p.name}</h2>
@@ -288,7 +289,7 @@ function Governance({ zh = false }: { zh?: boolean }) {
           {governance.map((g) => (
             <a
               key={g.file}
-              href={'/assets/' + g.file}
+              href={sitePath('/assets/' + g.file)}
               target="_blank"
               rel="noreferrer"
             >
@@ -336,7 +337,7 @@ function FAQs({ zh = false }: { zh?: boolean }) {
                 <p key={i}>{t}</p>
               ))}
               {f.q.includes('Annual Report') && (
-                <a href="/sec-filings">View SEC Filings</a>
+                <a href={sitePath('/sec-filings')}>View SEC Filings</a>
               )}
             </AccordionContent>
           </AccordionItem>
@@ -358,7 +359,7 @@ function Events() {
           <h2>Featured Presentation</h2>
           <a
             className="document-card"
-            href="/assets/CURRENC-Corp-Deck_Nov-10.pdf"
+            href={sitePath('/assets/CURRENC-Corp-Deck_Nov-10.pdf')}
             target="_blank"
           >
             <FileText size={34} />
@@ -378,7 +379,7 @@ function Events() {
         >
           <p>
             Your browser cannot display this PDF.{' '}
-            <a href="/assets/CURRENC-Corp-Deck_Nov-10.pdf">
+            <a href={sitePath('/assets/CURRENC-Corp-Deck_Nov-10.pdf')}>
               Open the presentation
             </a>
             .
@@ -387,7 +388,7 @@ function Events() {
       </div>
       <a
         className="text-link"
-        href="/assets/CURRENC-Corp-Deck_Nov-10.pdf"
+        href={sitePath('/assets/CURRENC-Corp-Deck_Nov-10.pdf')}
         download
       >
         Download Presentation <Download size={17} />
@@ -412,7 +413,7 @@ function Events() {
             >
               Webcast <ArrowUpRight size={18} />
             </a>
-            <a className="text-link" href="/meeting-notice">
+            <a className="text-link" href={sitePath('/meeting-notice')}>
               Meeting notice <ArrowRight size={18} />
             </a>
           </article>
@@ -424,7 +425,7 @@ function Events() {
               <h3>Corporate Presentation</h3>
               <a
                 className="text-link"
-                href="/assets/CURRENC-Corp-Deck_Nov-10.pdf"
+                href={sitePath('/assets/CURRENC-Corp-Deck_Nov-10.pdf')}
                 target="_blank"
               >
                 Open PDF <ArrowUpRight size={18} />
@@ -604,7 +605,7 @@ function SearchPage() {
         {results.map((x, i) => (
           <a
             key={x.url + i}
-            href={x.url}
+            href={sitePath(x.url)}
             target={x.url.startsWith('http') ? '_blank' : undefined}
             rel="noreferrer"
           >
@@ -688,14 +689,14 @@ export function InnerContent({
         <div className="sitemap">
           <div>
             <h2>
-              <a href="/">Overview</a>
+              <a href={sitePath('/')}>Overview</a>
             </h2>
           </div>
           {groups.map((g) => (
             <div key={g.title}>
               <h2>{g.title}</h2>
               {g.items.map(([n, p]) => (
-                <a href={'/' + p} key={p}>
+                <a href={sitePath('/' + p)} key={p}>
                   {n}
                   <ArrowRight size={16} />
                 </a>
@@ -740,7 +741,7 @@ export function InnerContent({
             voted upon is available in the Company’s proxy statement and related
             meeting materials.
           </p>
-          <a className="text-link" href="/news">
+          <a className="text-link" href={sitePath('/news')}>
             View All News <ArrowRight size={17} />
           </a>
         </article>
@@ -789,7 +790,7 @@ function Chinese() {
           ['证券交易委员会文件', 'sec-filings'],
           ['投资者联系', 'contacts'],
         ].map(([n, u]) => (
-          <a href={'/' + u} key={u}>
+          <a href={sitePath('/' + u)} key={u}>
             {n}
             <ArrowRight size={17} />
           </a>
@@ -857,7 +858,7 @@ function Filings() {
               </TableCell>
               <TableCell>{f.text}</TableCell>
               <TableCell>
-                <a href={f.url} target="_blank" rel="noreferrer">
+                <a href={sitePath(f.url)} target="_blank" rel="noreferrer">
                   View <ArrowUpRight size={16} />
                 </a>
               </TableCell>

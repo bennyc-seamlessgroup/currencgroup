@@ -13,7 +13,7 @@ npm run dev
 
 The current preview is http://127.0.0.1:3000/.
 
-`npm run build` exports the site into `dist/client/`. This output contains the website and local assets; it can be used by a static host. GitHub deployment and custom-domain routing are intentionally not configured yet.
+`npm run build` exports the site into `dist/client/`. This output contains the website and local assets; it can be used by a static host. GitHub Actions now builds and deploys the static export to GitHub Pages at https://bennyc-seamlessgroup.github.io/currencgroup/. Custom-domain routing is not configured yet.
 
 ## Manual content updates
 
@@ -57,7 +57,7 @@ Widget configuration and styling: `app/tradingview.tsx` and `app/tradingview.css
 - Public event archive includes the 2026 shareholder meeting and the 2025 presentation, earnings call and Roth conference. Obtain any unpublished attachments or recordings needed from the Q4 account before cancellation.
 - Configure selected stock/form/email services and verify real submissions and unsubscribe behavior.
 - Add and test old `.aspx` URL compatibility on the final host; the local review uses clean routes.
-- Review GitHub hosting setup, domain/DNS routing (including the separate tokenization paths), licenses for supplied imagery/fonts and a Q4 cutover/rollback plan.
+- Review custom-domain/DNS routing (including the separate tokenization paths), licenses for supplied imagery/fonts and a Q4 cutover/rollback plan.
 - The starter dependency install reported vulnerabilities. Review the dependency audit before production; no forced dependency upgrades were made as part of this local visual build.
 
 ## Validation

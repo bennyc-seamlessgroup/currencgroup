@@ -1,3 +1,4 @@
+import { sitePath } from '@/lib/site-path';
 import { ArrowRight, ArrowUpRight, Download } from 'lucide-react';
 import { Header, Footer, Quote } from './shell';
 import { companies } from '@/data/navigation';
@@ -33,7 +34,7 @@ export function Home({ zh = false }: { zh?: boolean }) {
               </p>
             </div>
             <div className="home-hero-media" aria-hidden="true">
-              <img src="/assets/stock-manhattan-blue-hour.jpg" alt="" fetchPriority="high" />
+              <img src={sitePath('/assets/stock-manhattan-blue-hour.jpg')} alt="" fetchPriority="high" />
             </div>
           </div>
           <div className="home-market"><div className="wrap"><Quote /></div></div>
@@ -64,7 +65,7 @@ export function Home({ zh = false }: { zh?: boolean }) {
         <section className="processing"><div className="wrap home-processing-inner">
           <h2>{zh ? '交易处理金额' : 'Processing Value'}</h2>
           <img
-            src="/assets/CURRENC-TPV-Chart.png"
+            src={sitePath('/assets/CURRENC-TPV-Chart.png')}
             alt="CURRENC total processing value in USD: 2018, 1.55 billion; 2019, 2.25 billion; 2020, 2.64 billion; 2021, 3.34 billion; 2022, 3.55 billion; 2023, 4.53 billion; 2024, 5.14 billion; 2025, 5.8 billion."
             loading="lazy"
           />
@@ -77,7 +78,7 @@ export function Home({ zh = false }: { zh?: boolean }) {
                 <article className="company" key={c.name}>
                   <div className="company-logo">
                     <img
-                      src={'/assets/' + c.image}
+                      src={sitePath('/assets/' + c.image)}
                       alt={c.name}
                       loading="lazy"
                     />
@@ -93,7 +94,7 @@ export function Home({ zh = false }: { zh?: boolean }) {
                         ][i]
                       : c.text}
                   </p>
-                  <a href={c.url} target="_blank" rel="noreferrer">
+                  <a href={sitePath(c.url)} target="_blank" rel="noreferrer">
                     Learn More <ArrowUpRight size={17} />
                   </a>
                 </article>
@@ -139,7 +140,7 @@ export function Home({ zh = false }: { zh?: boolean }) {
           <div className="wrap">
             <div className="section-heading">
               <h2>{zh ? '新闻发布' : 'Latest News'}</h2>
-              <a href={zh ? '/zh/news' : '/news'}>
+              <a href={sitePath(zh ? '/zh/news' : '/news')}>
                 {zh ? '过去的新闻' : 'View All News'} <ArrowRight size={18} />
               </a>
             </div>
@@ -153,13 +154,13 @@ export function Home({ zh = false }: { zh?: boolean }) {
                     )}
                   </time>
                   <h3>
-                    <a href={n.url} target="_blank" rel="noreferrer">
+                    <a href={sitePath(n.url)} target="_blank" rel="noreferrer">
                       {n.title}
                     </a>
                   </h3>
                   <a
                     className="read-more"
-                    href={n.url}
+                    href={sitePath(n.url)}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -175,18 +176,18 @@ export function Home({ zh = false }: { zh?: boolean }) {
             <div className="section-heading">
               <h2>{zh ? '演示材料发布' : 'Latest Presentation'}</h2>
               <a
-                href={zh ? '/zh/events' : '/events'}
+                href={sitePath(zh ? '/zh/events' : '/events')}
                 aria-label="All presentations"
               >
                 <ArrowRight />
               </a>
             </div>
             <a
-              href="/assets/CURRENC-Corp-Deck_Nov-10.pdf"
+              href={sitePath('/assets/CURRENC-Corp-Deck_Nov-10.pdf')}
               target="_blank"
               className="deck-cover"
             >
-              <img src="/assets/logo.svg" alt="CURRENC Group" />
+              <img src={sitePath('/assets/logo.svg')} alt="CURRENC Group" />
               <span>
                 Corporate
                 <br />
@@ -197,7 +198,7 @@ export function Home({ zh = false }: { zh?: boolean }) {
             </a>
             <a
               className="text-link"
-              href="/assets/CURRENC-Corp-Deck_Nov-10.pdf"
+              href={sitePath('/assets/CURRENC-Corp-Deck_Nov-10.pdf')}
               download
             >
               {zh ? '下载 PDF' : 'Download PDF'} <Download size={17} />
@@ -206,7 +207,7 @@ export function Home({ zh = false }: { zh?: boolean }) {
           <div>
             <div className="section-heading">
               <h2>{zh ? '即将举行的活动' : 'Latest Events'}</h2>
-              <a href={zh ? '/zh/events' : '/events'} aria-label="All events">
+              <a href={sitePath(zh ? '/zh/events' : '/events')} aria-label="All events">
                 <ArrowRight />
               </a>
             </div>
@@ -234,7 +235,7 @@ export function Home({ zh = false }: { zh?: boolean }) {
                 Webcast <ArrowUpRight size={17} />
               </a>
             </article>
-            <a className="text-link" href={zh ? '/zh/events' : '/events'}>
+            <a className="text-link" href={sitePath(zh ? '/zh/events' : '/events')}>
               {zh ? '过去的活动' : 'View All Events'} <ArrowRight size={17} />
             </a>
           </div>

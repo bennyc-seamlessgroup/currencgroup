@@ -1,3 +1,4 @@
+import { sitePath } from '@/lib/site-path';
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
@@ -75,7 +76,7 @@ export function Quote({ zh = false }: { zh?: boolean }) {
       <span>{zh ? '納斯達克上市 · CURR' : 'NASDAQ listed · CURR'}</span>
       <small>{zh ? '延遲市場數據 · 美元' : 'Delayed market data · USD'}</small>
     </div>
-    <a className="market-stock-link" href={zh ? '/zh/stock' : '/stock'}>{zh ? '股票資訊' : 'Stock information'} <span aria-hidden="true">↗</span></a>
+    <a className="market-stock-link" href={sitePath(zh ? '/zh/stock' : '/stock')}>{zh ? '股票資訊' : 'Stock information'} <span aria-hidden="true">↗</span></a>
     <a className="market-fallback" href={symbolUrl} target="_blank" rel="noopener noreferrer">{zh ? '在 TradingView 查看 CURR' : 'View CURR on TradingView'}</a>
   </div>;
 }

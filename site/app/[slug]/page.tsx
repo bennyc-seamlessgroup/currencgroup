@@ -1,3 +1,4 @@
+import { sitePath } from '@/lib/site-path';
 import { AboutPage, NewsEventsPage, InvestorPage } from '../about-page';
 import { notFound } from 'next/navigation';
 import { Header, Footer } from '../shell';
@@ -72,7 +73,7 @@ export default async function Page({
         <section
           className="inner-hero"
           style={{
-            backgroundImage: `linear-gradient(90deg,rgba(24,42,55,.62),rgba(30,54,66,.45)),url('/assets/${banner}_banner.jpg')`,
+            backgroundImage: `linear-gradient(90deg,rgba(24,42,55,.62),rgba(30,54,66,.45)),url('${sitePath(`/assets/${banner}_banner.jpg`)}')`,
           }}
         >
           <span className="eyebrow">CURRENC GROUP · INVESTOR RELATIONS</span>
@@ -83,7 +84,7 @@ export default async function Page({
             {group.items.map(([n, p]) => (
               <a
                 key={p}
-                href={'/' + p}
+                href={sitePath('/' + p)}
                 className={p.split('#')[0] === slug ? 'active' : ''}
               >
                 {n}

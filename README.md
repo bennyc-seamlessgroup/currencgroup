@@ -6,4 +6,4 @@ Run locally from `site/` with `npm install` and `npm run dev`. The static build 
 
 The `audit/` directory keeps migration records and downloaded source references. `scripts/` contains the import and validation tools used to prepare the site. Generated builds and dependencies are excluded from Git.
 
-This repository contains the source project. GitHub Pages, the public domain, and production forms/email services are not configured yet.
+This repository contains the source project. GitHub Pages publishes the static site from `main` at https://bennyc-seamlessgroup.github.io/currencgroup/. The public domain and production forms/email services are not configured yet.

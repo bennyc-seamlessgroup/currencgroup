@@ -1,4 +1,5 @@
 'use client';
+import { sitePath } from '@/lib/site-path';
 import { useState, useId } from 'react';
 import { ArrowUpRight, ChevronDown, Menu, Search, X } from 'lucide-react';
 import {
@@ -12,7 +13,7 @@ import { groups } from '@/data/navigation';
 import { labels } from '@/data/chinese';
 export function Header({ zh = false }: { zh?: boolean }) {
   const tr = (s: string) => (zh ? labels[s] || s : s);
-  const href = (s: string) => (zh ? '/zh/' + s : '/' + s);
+  const href = (s: string) => sitePath(zh ? '/zh/' + s : '/' + s);
   const [mobile, setMobile] = useState(false);
   const [search, setSearch] = useState(false);
   return (
@@ -22,11 +23,11 @@ export function Header({ zh = false }: { zh?: boolean }) {
       </a>
       <header className="header">
         <div className="header-inner">
-          <a href={zh ? '/chinese' : '/'} aria-label="CURRENC Group home">
-            <img className="logo" src="/assets/logo.svg" alt="curren·c" />
+          <a href={sitePath(zh ? '/chinese' : '/')} aria-label="CURRENC Group home">
+            <img className="logo" src={sitePath('/assets/logo.svg')} alt="curren·c" />
           </a>
           <nav className="desktop-nav" aria-label="Main navigation">
-            <a href={zh ? '/chinese' : '/'}>{tr('Overview')}</a>
+            <a href={sitePath(zh ? '/chinese' : '/')}>{tr('Overview')}</a>
             {groups.map((g) => (
               <DropdownMenu key={g.title}>
                 <DropdownMenuTrigger className="nav-trigger">
@@ -53,7 +54,7 @@ export function Header({ zh = false }: { zh?: boolean }) {
             >
               <Search size={19} />
             </button>
-            <a href={zh ? '/' : '/chinese'} className="language">
+            <a href={sitePath(zh ? '/' : '/chinese')} className="language">
               {zh ? 'ENG' : '简'}
             </a>
             <button
@@ -67,7 +68,7 @@ export function Header({ zh = false }: { zh?: boolean }) {
           </div>
         </div>
         {search && (
-          <form className="search-bar" action="/search">
+          <form className="search-bar" action={sitePath('/search')}>
             <input
               name="q"
               autoFocus
@@ -81,7 +82,7 @@ export function Header({ zh = false }: { zh?: boolean }) {
         )}
         {mobile && (
           <nav className="mobile-nav">
-            <a href={zh ? '/chinese' : '/'}>{tr('Overview')}</a>
+            <a href={sitePath(zh ? '/chinese' : '/')}>{tr('Overview')}</a>
             {groups.map((g) => (
               <div key={g.title}>
                 <strong>{tr(g.title)}</strong>
@@ -163,9 +164,9 @@ export function Footer({ zh = false }: { zh?: boolean }) {
         </div>
         <div>
           <h3>{zh ? '快速链接' : 'Quick Links'}</h3>
-          <a href="/sec-filings">SEC Filings</a>
-          <a href="/faqs">Investor FAQs</a>
-          <a href="/information-request">Information Request Form</a>
+          <a href={sitePath('/sec-filings')}>SEC Filings</a>
+          <a href={sitePath('/faqs')}>Investor FAQs</a>
+          <a href={sitePath('/information-request')}>Information Request Form</a>
           <a
             href="https://www.currencgroup.com/tokenization"
             target="_blank"
@@ -180,13 +181,13 @@ export function Footer({ zh = false }: { zh?: boolean }) {
         </div>
       </div>
       <div className="wrap footer-bottom">
-        <a href="/">
-          <img src="/assets/logo.svg" alt="CURRENC Group" />
+        <a href={sitePath('/')}>
+          <img src={sitePath('/assets/logo.svg')} alt="CURRENC Group" />
         </a>
         <span>
           © {new Date().getFullYear()} Currenc Group. All rights reserved.
         </span>
-        <a href="/site-map">Site Map</a>
+        <a href={sitePath('/site-map')}>Site Map</a>
       </div>
     </footer>
   );
@@ -202,7 +203,7 @@ export function Quote() {
         <span>Stock quote</span>
         <small>Preview · market data not connected</small>
       </div>
-      <a href="/stock" aria-label="View stock information">
+      <a href={sitePath('/stock')} aria-label="View stock information">
         <ArrowUpRight />
       </a>
     </div>

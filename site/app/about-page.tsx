@@ -1,3 +1,4 @@
+import { sitePath } from '@/lib/site-path';
 import { Header, Footer } from './shell';
 import { InnerContent } from './inner-content';
 import { groups } from '@/data/navigation';
@@ -55,7 +56,7 @@ function SectionPage({
               {items.map(([title, path]) => (
                 <a
                   key={path}
-                  href={(zh ? '/zh/' : '/') + path}
+                  href={sitePath((zh ? '/zh/' : '/') + path)}
                   aria-current={path === slug ? 'page' : undefined}
                 >
                   {zh ? labels[title] || title : title}
