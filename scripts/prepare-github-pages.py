@@ -13,7 +13,10 @@ if not root.joinpath('index.html').is_file() or not base.startswith('/'):
 
 for css in root.rglob('*.css'):
     text = css.read_text()
-    css.write_text(text.replace('url(/assets/', f'url({base}/assets/').replace('url("/assets/', f'url("{base}/assets/').replace("url('/assets/", f"url('{base}/assets/"))
+    for prefix in (f'{base}/_next/static/assets/', '/assets/', '../assets/', '../../assets/'):
+        for quote in ('', '"', "'"):
+            text = text.replace(f'url({quote}{prefix}', f'url({quote}{base}/assets/')
+    css.write_text(text)
 # vinext writes prefixed chunks beneath an extra directory. Pages itself already
 # mounts this artifact at /currencgroup/, so move chunks back to the artifact root.
 nested_chunks = root / base.lstrip('/') / '_next'
@@ -37,7 +40,7 @@ for page in pages:
         if not asset.is_file():
             raise SystemExit(f'Missing asset {asset} referenced by {page}')
 for css in root.rglob('*.css'):
-    if re.search(r'url\([\'"]?/assets/', css.read_text()):
+    if any(f"url({quote}{prefix}" in css.read_text() for prefix in (f'{base}/_next/static/assets/', '/assets/', '../assets/', '../../assets/') for quote in ('', '"', "'")):
         raise SystemExit(f'Unprefixed asset in {css}')
 # GitHub Pages serves directory index pages at clean URLs such as /currencgroup/news/.
 for page in pages:
