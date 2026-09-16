@@ -965,6 +965,7 @@ function Chinese() {
   );
 }
 function Filings() {
+  const latestFilingDate = filings[0]?.date;
   const [year, setYear] = useState('2026');
   const [form, setForm] = useState('All');
   const years = [...new Set(filings.map((f) => f.date.slice(0, 4)))]
@@ -1004,7 +1005,7 @@ function Filings() {
       </div>
       <p className="result-count">
         {rows.length} {rows.length === 1 ? 'filing' : 'filings'} · SEC archive
-        captured September 14, 2026
+        through {latestFilingDate ? fmt(latestFilingDate) : 'the latest update'}
       </p>
       <Table>
         <TableHeader>
@@ -1022,7 +1023,7 @@ function Filings() {
               <TableCell>
                 <strong>{f.form}</strong>
               </TableCell>
-              <TableCell>{f.text}</TableCell>
+              <TableCell>{f.description}</TableCell>
               <TableCell>
                 <a href={sitePath(f.url)} target="_blank" rel="noreferrer">
                   View <ArrowUpRight size={16} />
@@ -1034,7 +1035,9 @@ function Filings() {
       </Table>
       {!rows.length && <p>No filings match these filters.</p>}
       <p className="result-count">
-        For filings published after this archive was captured, visit SEC EDGAR.
+        For filings published after{' '}
+        {latestFilingDate ? fmt(latestFilingDate) : 'this archive'}, visit SEC
+        EDGAR.
       </p>
     </>
   );

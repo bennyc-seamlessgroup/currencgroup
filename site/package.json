@@ -10,7 +10,9 @@
     "build": "vinext build",
     "start": "vite preview --host 127.0.0.1 --outDir dist/client --port 3000",
     "lint": "oxlint",
-    "format": "oxfmt"
+    "format": "oxfmt",
+    "validate:content": "python3 ../scripts/validate-content.py",
+    "prebuild": "npm run validate:content"
   },
   "dependencies": {
     "react": "19.2.6",

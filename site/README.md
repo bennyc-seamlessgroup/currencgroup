@@ -17,11 +17,11 @@ The current preview is http://127.0.0.1:3000/.
 
 ## Manual content updates
 
-- `data/news.json`: investor press releases. Add `date` (YYYY-MM-DD), `title`, and an exact `url` to the published release. Keep entries in newest-first order. The homepage reads the first three entries from this same file.
+- `data/news.json`: editable investor press releases. Add `date` (YYYY-MM-DD), `title`, and the exact publisher `url`; keep entries newest-first. The homepage reads the first three entries from this file.
 - `data/featured-news.json`: the separate corporate archive. `date` preserves the Q4 archive date; `sourceDate` records the original publisher date when different. Both are shown when needed.
 - `data/profiles.ts`, `data/chinese.ts`: English and Chinese biographies and FAQs.
 - `data/governance.json`: document titles and local filenames.
-- `data/filings.json`: 257 SEC filing records copied from the SEC submissions index on September 14, 2026. There is no automatic refresh.
+- `data/filings.json`: editable public SEC filing archive with 225 records through September 15, 2026 and the original Q4 descriptions. Run `python3 ../scripts/update-sec-filings.py` from `site/` to refresh it from the official SEC submissions feed.
 - `public/assets/`: company images, banners, director portraits, governance PDFs, presentation PDF, and local Inter font.
 
 Example news entry:
@@ -34,7 +34,9 @@ Example news entry:
 }
 ```
 
-The scripts in the parent `scripts/` directory are migration tools, not scheduled jobs. `import-news.py` produces a broad publisher archive; do not rerun it over a manually curated news file without reviewing its output. It includes predecessor announcements outside the current website's scope. The final `data/news.json` is the curated list of 35 original entries.
+Full editing and upload instructions for both lists are in `data/CONTENT-UPDATES.md`. The GitHub Pages build validates both JSON files before publishing.
+
+The other scripts in the parent `scripts/` directory are migration tools, not scheduled jobs. `import-news.py` produces a broad publisher archive; do not rerun it over a manually curated news file without reviewing its output. It includes predecessor announcements outside the current website's scope. The final `data/news.json` is the curated list of 35 original entries.
 
 ## What works in this review
 
@@ -62,4 +64,4 @@ Widget configuration and styling: `app/tradingview.tsx` and `app/tradingview.css
 
 ## Validation
 
-The static build exports 32 HTML pages including the error page. `python3 ../scripts/validate-static.py` checks local resource links, duplicate element IDs and PDF signatures against that build. The validation report is saved in `../audit/static-validation.json`.
+The static build exports 32 HTML pages including the error page. `python3 ../scripts/validate-content.py` checks the editable news and filings data; `python3 ../scripts/validate-static.py` checks local resource links, duplicate element IDs and PDF signatures against the build. The validation report is saved in `../audit/static-validation.json`.
