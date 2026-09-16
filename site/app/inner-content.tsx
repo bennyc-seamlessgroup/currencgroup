@@ -1,6 +1,6 @@
 'use client';
 import { sitePath } from '@/lib/site-path';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type SyntheticEvent } from 'react';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -40,7 +40,15 @@ import governance from '@/data/governance.json';
 import committees from '@/data/committees.json';
 import filings from '@/data/filings.json';
 import { AlertForm } from './shell';
+import { Checkbox } from '@/components/ui/checkbox';
 import { TradingView } from './tradingview';
+import {
+  EMAIL_ALERT_ACCESS_KEY,
+  INFORMATION_REQUEST_ACCESS_KEY,
+  idleSubmission,
+  submitWeb3Form,
+  type SubmissionStatus,
+} from '@/lib/web3forms';
 type News = { date: string; title: string; url: string; sourceDate?: string };
 const fmt = (date: string) =>
   new Date(date + 'T12:00:00').toLocaleDateString('en-US', {
@@ -152,7 +160,11 @@ function Profiles({
         return (
           <article className="leader-card" key={p.name}>
             <div className="leader-portrait">
-              <img src={sitePath('/assets/' + portrait)} alt={p.name} loading="lazy" />
+              <img
+                src={sitePath('/assets/' + portrait)}
+                alt={p.name}
+                loading="lazy"
+              />
             </div>
             <div className="leader-copy">
               <h2>{p.name}</h2>
@@ -312,7 +324,10 @@ function FAQs({ zh = false }: { zh?: boolean }) {
   const all = openItems.length === list.length;
   return (
     <>
-      <button className="text-link display-all" onClick={() => setOpenItems(all ? [] : list.map((item) => item.q))}>
+      <button
+        className="text-link display-all"
+        onClick={() => setOpenItems(all ? [] : list.map((item) => item.q))}
+      >
         {zh
           ? all
             ? '收起全部'
@@ -467,7 +482,9 @@ function Stock({ zh = false }: { zh?: boolean }) {
   return (
     <>
       <div className="notice">
-        {zh ? '報價及圖表由 TradingView 提供，市場數據有延遲，價格以美元顯示。' : 'Quotes and charts by TradingView. Market data is delayed; prices are in USD.'}
+        {zh
+          ? '報價及圖表由 TradingView 提供，市場數據有延遲，價格以美元顯示。'
+          : 'Quotes and charts by TradingView. Market data is delayed; prices are in USD.'}
       </div>
       <section id="stock-quote" className="stock-section">
         <h2>Stock Quote</h2>
@@ -479,7 +496,10 @@ function Stock({ zh = false }: { zh?: boolean }) {
       </section>
       <section id="historical" className="stock-section">
         <h2>Historical Stock Quote</h2>
-        <p className="market-preview-note">Preview only · historical lookup is not connected. You can explore past prices in the chart above.</p>
+        <p className="market-preview-note">
+          Preview only · historical lookup is not connected. You can explore
+          past prices in the chart above.
+        </p>
         <div className="form-row">
           <label>
             Date
@@ -508,7 +528,9 @@ function Stock({ zh = false }: { zh?: boolean }) {
       </section>
       <section id="calculator" className="stock-section">
         <h2>Investment Calculator</h2>
-        <p className="market-preview-note">Preview only · investment calculations are not connected.</p>
+        <p className="market-preview-note">
+          Preview only · investment calculations are not connected.
+        </p>
         <div className="form-row">
           <label>
             Amount ($)
@@ -531,46 +553,192 @@ function Stock({ zh = false }: { zh?: boolean }) {
   );
 }
 function RequestForm() {
+  const [consent, setConsent] = useState(false);
+  const [status, setStatus] = useState<SubmissionStatus>(idleSubmission);
+  const fields = [
+    ['First Name', 'first_name', 'text', true],
+    ['Last Name', 'last_name', 'text', true],
+    ['Email Address', 'email', 'email', true],
+    ['Company', 'company', 'text', false],
+    ['Title', 'title', 'text', false],
+    ['Address', 'address', 'text', false],
+    ['City', 'city', 'text', false],
+    ['State / Province', 'state_province', 'text', false],
+    ['Postal Code', 'postal_code', 'text', false],
+    ['Country', 'country', 'text', true],
+    ['Phone', 'phone', 'tel', false],
+  ] as const;
+
+  async function handleSubmit(
+    event: SyntheticEvent<HTMLFormElement, SubmitEvent>,
+  ) {
+    event.preventDefault();
+    if (!consent) {
+      setStatus({
+        state: 'error',
+        message:
+          'Please consent to the use of your information so we can respond.',
+      });
+      return;
+    }
+    const form = event.currentTarget;
+    setStatus({ state: 'sending', message: 'Sending your request…' });
+    try {
+      await submitWeb3Form(form, INFORMATION_REQUEST_ACCESS_KEY, {
+        subject: 'CURRENC Investor Information Request',
+        from_name: 'CURRENC Group Investor Relations',
+        'Request Type': 'Investor information request',
+        Consent: 'Yes',
+      });
+      form.reset();
+      setConsent(false);
+      setStatus({
+        state: 'success',
+        message:
+          'Thank you. Your request has been sent to CURRENC Investor Relations.',
+      });
+    } catch (error) {
+      setStatus({
+        state: 'error',
+        message:
+          error instanceof Error
+            ? error.message
+            : 'The request could not be sent. Please try again.',
+      });
+    }
+  }
+
   return (
     <div className="request-form">
       <p>To request investor information, please complete the form below.</p>
-      <div className="notice">
-        Preview only · submissions are not enabled. You can contact{' '}
-        <a href="mailto:investors@currencgroup.com">
-          investors@currencgroup.com
-        </a>
-        .
-      </div>
-      <fieldset disabled>
+      <form onSubmit={handleSubmit}>
+        <input
+          className="form-honeypot"
+          type="checkbox"
+          name="botcheck"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
         <div className="form-grid">
-          {[
-            'First Name',
-            'Last Name',
-            'Email Address',
-            'Company',
-            'Title',
-            'Address',
-            'City',
-            'State / Province',
-            'Postal Code',
-            'Country',
-            'Phone',
-          ].map((x) => (
-            <label key={x}>
-              {x}
-              <input type={x === 'Email Address' ? 'email' : 'text'} />
+          {fields.map(([label, name, type, required]) => (
+            <label key={name}>
+              <span>
+                {label}
+                {required && <span aria-hidden="true"> *</span>}
+              </span>
+              <input
+                name={name}
+                type={type}
+                required={required}
+                autoComplete={
+                  name === 'email'
+                    ? 'email'
+                    : name === 'phone'
+                      ? 'tel'
+                      : undefined
+                }
+              />
             </label>
           ))}
         </div>
         <label>
-          Comments / Information Requested
-          <textarea rows={6} />
+          <span>
+            Comments / Information Requested <span aria-hidden="true">*</span>
+          </span>
+          <textarea name="message" rows={6} required />
         </label>
-        <button className="button dark" disabled>
-          Submit Request <ArrowRight size={17} />
+        <label
+          className="form-consent form-consent--request"
+          htmlFor="information-request-consent"
+        >
+          <Checkbox
+            id="information-request-consent"
+            checked={consent}
+            onCheckedChange={setConsent}
+          />
+          <span>
+            I consent to CURRENC Group using the information above to respond to
+            my request.
+          </span>
+        </label>
+        <button className="button dark" disabled={status.state === 'sending'}>
+          {status.state === 'sending' ? 'Sending…' : 'Submit Request'}{' '}
+          <ArrowRight size={17} />
         </button>
-      </fieldset>
+        {status.state !== 'idle' && (
+          <p
+            className={`form-status form-status--${status.state}`}
+            role={status.state === 'error' ? 'alert' : 'status'}
+          >
+            {status.message}
+          </p>
+        )}
+      </form>
     </div>
+  );
+}
+
+function UnsubscribeForm() {
+  const [status, setStatus] = useState<SubmissionStatus>(idleSubmission);
+  async function handleSubmit(
+    event: SyntheticEvent<HTMLFormElement, SubmitEvent>,
+  ) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setStatus({ state: 'sending', message: 'Sending your request…' });
+    try {
+      await submitWeb3Form(form, EMAIL_ALERT_ACCESS_KEY, {
+        subject: 'CURRENC Investor Email Alert Unsubscribe Request',
+        from_name: 'CURRENC Group Investor Relations',
+        'Request Type': 'Unsubscribe from all investor email alerts',
+      });
+      form.reset();
+      setStatus({
+        state: 'success',
+        message:
+          'Your unsubscribe request has been sent to Investor Relations for processing.',
+      });
+    } catch (error) {
+      setStatus({
+        state: 'error',
+        message:
+          error instanceof Error
+            ? error.message
+            : 'The request could not be sent. Please try again.',
+      });
+    }
+  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        className="form-honeypot"
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
+      <input
+        name="email"
+        type="email"
+        aria-label="Unsubscribe email address"
+        placeholder="Email address"
+        autoComplete="email"
+        required
+      />
+      <button className="button dark" disabled={status.state === 'sending'}>
+        {status.state === 'sending' ? 'Sending…' : 'Unsubscribe'}
+      </button>
+      {status.state !== 'idle' && (
+        <p
+          className={`form-status form-status--${status.state}`}
+          role={status.state === 'error' ? 'alert' : 'status'}
+        >
+          {status.message}
+        </p>
+      )}
+    </form>
   );
 }
 function SearchPage() {
@@ -673,14 +841,11 @@ export function InnerContent({
         <div className="email-page">
           <h2>Stay informed</h2>
           <p>Select the investor updates you would like to receive.</p>
-          <AlertForm />
+          <AlertForm zh={zh} />
           <div className="unsubscribe" id="unsubscribe">
             <h3>Unsubscribe</h3>
             <p>Manage your investor email subscriptions.</p>
-            <input type="email" aria-label="Unsubscribe email address" placeholder="Email address" disabled />
-            <button className="button dark" disabled>
-              Unsubscribe
-            </button>
+            <UnsubscribeForm />
           </div>
         </div>
       );
@@ -838,7 +1003,8 @@ function Filings() {
         />
       </div>
       <p className="result-count">
-        {rows.length} {rows.length === 1 ? 'filing' : 'filings'} · SEC archive captured September 14, 2026
+        {rows.length} {rows.length === 1 ? 'filing' : 'filings'} · SEC archive
+        captured September 14, 2026
       </p>
       <Table>
         <TableHeader>

@@ -46,7 +46,7 @@ The tokenization destination remains https://www.currencgroup.com/tokenization. 
 
 The Stock Info page uses TradingView quote and interactive chart widgets for `NASDAQ:CURR`. The homepage retains its original stock-strip design with a placeholder price and a link to Stock Info. These load from TradingView at runtime and need internet access; no API key or backend is required. TradingView branding is preserved. US stock widget data is delayed and may differ from consolidated Nasdaq quotes. The widgets cannot supply raw data to our own calculator.
 
-Historical lookup, investment calculator, request forms, and email subscriptions remain visual previews. Their inputs and actions are disabled.
+Historical lookup and the investment calculator remain visual previews. The Information Request form and the investor email alert signup/unsubscribe forms submit through Web3Forms. Each submission is forwarded to the recipient configured for its Web3Forms access key for manual processing; email alert requests do not yet add or remove contacts in a mailing-list system automatically.
 
 Widget configuration and styling: `app/tradingview.tsx` and `app/tradingview.css`. Reference: https://www.tradingview.com/widget-docs/.
 
@@ -55,7 +55,7 @@ Widget configuration and styling: `app/tradingview.tsx` and `app/tradingview.css
 - Review the carried-over company content. Original FAQ copy contains historical 2024 operating data and ADS terminology; it was preserved rather than silently rewritten.
 - Review differences between Q4 archive dates and original publication dates in featured news.
 - Public event archive includes the 2026 shareholder meeting and the 2025 presentation, earnings call and Roth conference. Obtain any unpublished attachments or recordings needed from the Q4 account before cancellation.
-- Configure selected stock/form/email services and verify real submissions and unsubscribe behavior.
+- Verify the recipient addresses attached to both Web3Forms access keys, then make one controlled live submission to each form and confirm delivery. Consider enabling Web3Forms domain restriction and hCaptcha before the final domain cutover.
 - Add and test old `.aspx` URL compatibility on the final host; the local review uses clean routes.
 - Review custom-domain/DNS routing (including the separate tokenization paths), licenses for supplied imagery/fonts and a Q4 cutover/rollback plan.
 - The starter dependency install reported vulnerabilities. Review the dependency audit before production; no forced dependency upgrades were made as part of this local visual build.

@@ -248,7 +248,7 @@
   margin-block: 30px;
 }
 .investor-site .form-grid label,
-.investor-site .request-form > fieldset > label {
+.investor-site .request-form form > label {
   color: #405c6b;
 }
 .investor-site .email-page {
@@ -440,4 +440,21 @@
   }
 }
 
-.investor-site #historical .form-row label { max-width: 340px; }
+.investor-site #historical .form-row label {
+  max-width: 340px;
+}
+
+.investor-site .email-page .button.light {
+  background: #244b58;
+  color: #fff;
+}
+.investor-site .unsubscribe form {
+  display: grid;
+  gap: 14px;
+}
+.investor-site .unsubscribe form input {
+  margin: 8px 0 0;
+}
+.investor-site .unsubscribe form .button {
+  justify-self: start;
+}

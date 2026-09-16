@@ -1090,7 +1090,7 @@ footer p {
 }
 .form-row label,
 .form-grid label,
-.request-form > fieldset > label {
+.request-form form > label {
   font-size: 14px;
   display: flex;
   flex-direction: column;
@@ -1119,12 +1119,61 @@ footer p {
   width: 100%;
   margin: 8px 0 25px;
 }
-.request-form fieldset {
+
+.form-honeypot {
+  display: none !important;
+}
+.alert-fieldset {
   border: 0;
   padding: 0;
+  margin: 16px 0 0;
 }
-.request-form input:disabled {
-  color: #8f9da3;
+.alert-fieldset legend {
+  font-size: 12px;
+  line-height: 1.5;
+  color: inherit;
+}
+.form-consent {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px !important;
+  line-height: 1.5;
+  margin: 0 0 20px !important;
+}
+.form-consent [data-slot='checkbox'] {
+  margin-top: 2px;
+  border-color: currentColor;
+}
+.form-consent--request {
+  color: #405c6b;
+  font-size: 13px !important;
+  max-width: 680px;
+}
+.form-status {
+  font-size: 13px !important;
+  line-height: 1.55;
+  margin: 14px 0 0 !important;
+}
+.form-status--success {
+  color: #76c9a1 !important;
+}
+.form-status--error {
+  color: #ffb2ad !important;
+}
+.request-form .form-status--success,
+.email-page .form-status--success,
+.unsubscribe .form-status--success {
+  color: #17613e !important;
+}
+.request-form .form-status--error,
+.email-page .form-status--error,
+.unsubscribe .form-status--error {
+  color: #9e2d2d !important;
+}
+.button:disabled {
+  cursor: wait;
+  opacity: 0.65;
 }
 .contacts-grid {
   display: grid;
@@ -1354,7 +1403,13 @@ main[lang='zh-Hans'] p {
 }
 
 @media (max-width: 1020px) {
-  .desktop-nav { display: none; }
-  .header-actions { margin-left: auto; }
-  .mobile-toggle { display: block; }
+  .desktop-nav {
+    display: none;
+  }
+  .header-actions {
+    margin-left: auto;
+  }
+  .mobile-toggle {
+    display: block;
+  }
 }
